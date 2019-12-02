@@ -1,0 +1,3 @@
+[submodule "loja"]
+	path = loja
+	url = https://github.com/gabiconde/formacao-Clojure-Alura/loja.git
