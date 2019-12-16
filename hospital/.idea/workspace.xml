@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f54d6433-06d7-46c0-a294-9078bd1c90c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hospital/aula3.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hospital/aula5.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/colecoes.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/colecoes.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/logic.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/logic.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../loja" beforeDir="false" afterPath="$PROJECT_DIR$/../loja" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Clojure Application.aula1">
+  <component name="RunManager" selected="Clojure Application.aula5">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -74,6 +76,42 @@
       <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
       <method v="2" />
     </configuration>
+    <configuration name="aula3" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula3.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aula4" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula4.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aula5" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula5.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
     <configuration name="hospital.colecoes" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
       <module name="hospital" />
       <setting name="path" value="$PROJECT_DIR$/src/hospital/colecoes.clj" />
@@ -88,6 +126,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Clojure Application.aula5" />
+        <item itemvalue="Clojure Application.aula4" />
+        <item itemvalue="Clojure Application.aula3" />
         <item itemvalue="Clojure Application.aula1" />
         <item itemvalue="Clojure Application.hospital.colecoes" />
       </list>
