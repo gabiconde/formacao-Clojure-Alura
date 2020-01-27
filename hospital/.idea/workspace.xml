@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f54d6433-06d7-46c0-a294-9078bd1c90c5" name="Default Changelist" comment="" />
+    <list default="true" id="f54d6433-06d7-46c0-a294-9078bd1c90c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/hospital/aula6.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loja" beforeDir="false" afterPath="$PROJECT_DIR$/../loja" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UQtZkv38feHCPhr9c7Ef3SVDCZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="cursive.last.file.extension./Users/gabriela.conde/Documents/clojure/alura/hospital/src" value="clj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/hospital" />
+    </key>
+  </component>
+  <component name="ReplState" timestamp="1579803713999">{:repl-history {:ide [], :local [{:command &quot;(println (range 5))&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(dosync (println (range 5)))&quot;, :offset 28, :ns &quot;user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -24,14 +49,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+  <component name="RunManager" selected="Clojure Application.hospital.aula6">
+    <configuration name="Unnamed" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+      <module name="hospital" />
       <setting name="replType" value="NREPL" />
-      <setting name="execution" value="LEININGEN" />
-      <module name="" />
+      <setting name="execution" value="INTELLIJ" />
       <setting name="jvmArgs" value="" />
       <setting name="parameters" value="" />
-      <setting name="workingDir" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <module name="hospital" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
       <setting name="profiles" value="" />
       <setting name="aliases" value="" />
       <method v="2" />
@@ -43,6 +79,83 @@
       <module name="" />
       <method v="2" />
     </configuration>
+    <configuration name="aula6 (2)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula6.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aula6 (3)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula6.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aula6 (4)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula6.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aula6" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula6.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hospital.aula6" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="hospital" />
+      <setting name="path" value="$PROJECT_DIR$/src/hospital/aula6.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Clojure Application.aula6 (2)" />
+      <item itemvalue="Clojure Application.hospital.aula6" />
+      <item itemvalue="Clojure Application.aula6 (3)" />
+      <item itemvalue="Clojure Application.aula6 (4)" />
+      <item itemvalue="Clojure REPL.Unnamed" />
+      <item itemvalue="Clojure Application.aula6" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure Application.hospital.aula6" />
+        <item itemvalue="Clojure Application.aula6" />
+        <item itemvalue="Clojure Application.aula6 (4)" />
+        <item itemvalue="Clojure Application.aula6 (3)" />
+        <item itemvalue="Clojure Application.aula6 (2)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -56,5 +169,18 @@
       <updated>1575300704540</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
