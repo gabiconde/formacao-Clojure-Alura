@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ccc027e9-629c-4b26-b30e-5c96b1ebf6ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hospital/src/hospital/colecoes.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospital/src/hospital/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/hospital/src/hospital/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja" beforeDir="false" afterPath="$PROJECT_DIR$/loja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loja/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loja/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/loja.iml" beforeDir="false" afterPath="$PROJECT_DIR$/loja/hospital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/loja/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/aula1.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/aula2.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/aula3.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/aula4.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/aula5.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/loja/src/hospital/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/db.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/src/loja/logic.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loja/test/loja/core_test.clj" beforeDir="false" afterPath="$PROJECT_DIR$/loja/test/loja/core_test.clj" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1URYKSqAogkCYr31aIJaSlpqUFF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hospital" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="INTELLIJ" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="0" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="colecoes" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="alura" />
+      <setting name="path" value="$PROJECT_DIR$/hospital/src/hospital/colecoes.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/hospital/src/hospital" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure Application.colecoes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccc027e9-629c-4b26-b30e-5c96b1ebf6ff" name="Default Changelist" comment="" />
+      <created>1575320810144</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575320810144</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
