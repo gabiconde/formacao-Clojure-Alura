@@ -22,3 +22,6 @@
   (pprint (s/validate Pacientes {25 gabi}))
   (pprint (s/validate Paciente {})))
 
+(def Visitas
+  {PosInt [s/Str]})
+
