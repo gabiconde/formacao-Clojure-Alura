@@ -14,3 +14,18 @@
 
   (testing "sem departamento"
     (is (not (cabe-na-fila? {} :espera)))))
+
+(deftest chega-em-test
+  (testing "aceita pessoas enquanto cabem na fila"
+    (is (= {:espera [4 50 3 21 5]}
+           (chega-em {:espera [4 50 3 21]} :espera 5))))
+
+  (testing "Não aceita pessoas quando não cabe na fila"
+    (is (nil? (chega-em {:espera [4 50 3 21 45]} :espera 5)))))
+
+    ;é o  erro generico para qualquer exception não da pra saber se é o erro esperado ou nao
+    ;(is (thrown? clojure.lang.ExceptionInfo (chega-em {:espera [4 50 3 21 45]} :espera 5)))))
+
+    ;não é bom testar a string do erro, pois pode mudar e quebra o teste
+    ; nil não é a melhor opcao quando trabalhamos com atoms.
+
