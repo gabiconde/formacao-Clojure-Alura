@@ -16,9 +16,20 @@
         count
         (< 5))))
 
-(defn chega-em [hospital fila pessoa]
+#_(defn- tenta-colocar [hospital fila pessoa]
+    (if (cabe-na-fila? hospital fila)
+      (update hospital fila conj pessoa)
+      (throw (ex-info "Não cabe na fila" {:hospital hospital
+                                          :type :nao-cabe-na-fila}))))
+(defn- tenta-colocar [hospital fila pessoa]
   (if (cabe-na-fila? hospital fila)
     (update hospital fila conj pessoa)))
+
+(defn chega-em
+  [hospital departamento pessoa]
+  (if-let [novo-hosp (tenta-colocar hospital departamento pessoa)]
+    {:hospital novo-hosp :status :success}
+    {:hospital hospital :status :fail}))
 
     ;(throw (IllegalStateException. "Não cabe na fila" {:hospital hospital
                                                        ;:pessoa pessoa)))
