@@ -1,4 +1,5 @@
 (ns testes.model
+  (:require [schema.core :as s])
   (:import (clojure.lang PersistentQueue)))
 
 (defn novo-hospital []
@@ -9,3 +10,7 @@
 
 (def fila-vazia
   PersistentQueue/EMPTY)
+
+(s/def pacienteID s/Int)
+(s/def departamento (s/queue pacienteID))
+(s/def hospital {s/Keyword departamento})

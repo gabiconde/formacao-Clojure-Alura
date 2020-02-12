@@ -1,4 +1,6 @@
-(ns testes.logic)
+(ns testes.logic
+  (:require [schema.core :as s]
+            [testes.model :as model]))
 
 ;qualquer um que der nil devolver nil
 (defn cabe-na-fila?
@@ -34,16 +36,22 @@
     ;(throw (IllegalStateException. "Não cabe na fila" {:hospital hospital
                                                        ;:pessoa pessoa)))
 
-(defn atende
-  [hospital departamento]
+(s/defn atende :- model/hospital
+  [hospital :- model/hospital
+   departamento :- s/Keyword]
   (update hospital departamento pop))
 
-(defn proximo [hospital departamento]
+(s/defn proximo :- model/pacienteID
+  [hospital :- model/hospital
+   departamento :- s/Keyword]
   (-> hospital
       departamento
       peek))
 
-(defn transfere [hospital de para]
+(s/defn transfere :- model/hospital
+  [hospital :- model/hospital
+   de :- s/Keyword
+   para :- s/Keyword]
   (let [pessoa (proximo hospital de)]
     (-> hospital
         (atende de)

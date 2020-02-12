@@ -10,3 +10,4 @@
 (def fila-vazia
   PersistentQueue/EMPTY)
 
+

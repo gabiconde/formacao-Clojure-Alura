@@ -1,7 +1,10 @@
 (ns testes.logic-test
   (:require [clojure.test :refer :all]
             [testes.logic :refer :all]
-            [testes.model :as model]))
+            [testes.model :as model]
+            [schema.core :as s]))
+
+(s/with-fn-validation)
 
 (deftest cabe-na-fila?-test
   (testing "cabe na fila"
@@ -50,8 +53,8 @@
              (transfere hosp-2 :espera2 :raio-x)))))
 
   (testing "recusa pessoas se não cabe"
-    (let [hosp-cheio {:espera [5]
-                      :raio-x [2 45 67 34 5]}]
+    (let [hosp-cheio {:espera (conj model/fila-vazia 5)
+                      :raio-x (conj model/fila-vazia 2 45 67 34 5)}]
       (is (thrown? clojure.lang.ExceptionInfo
                    (transfere hosp-cheio :espera :raio-x))))))
 
