@@ -9,27 +9,42 @@
               (< 5)))
 
 ;ele testa se é nil apenas o que esta no when.
-(defn cabe-nafila2?
-  [hospital fila]
-  (when-let [line (get hospital :fila)]
-    (-> line
-        count
-        (< 5))))
+#_(defn cabe-nafila2?
+    [hospital fila]
+    (when-let [line (get hospital :fila)]
+      (-> line
+          count
+          (< 5))))
 
 #_(defn- tenta-colocar [hospital fila pessoa]
     (if (cabe-na-fila? hospital fila)
-      (update hospital fila conj pessoa)
-      (throw (ex-info "Não cabe na fila" {:hospital hospital
-                                          :type :nao-cabe-na-fila}))))
-(defn- tenta-colocar [hospital fila pessoa]
+      (update hospital fila conj pessoa)))
+(defn tenta-colocar [hospital fila pessoa]
   (if (cabe-na-fila? hospital fila)
-    (update hospital fila conj pessoa)))
+    (update hospital fila conj pessoa)
+    (throw (ex-info "Não cabe na fila" {:hospital hospital
+                                        :type :nao-cabe-na-fila}))))
 
 (defn chega-em
   [hospital departamento pessoa]
   (if-let [novo-hosp (tenta-colocar hospital departamento pessoa)]
-    {:hospital novo-hosp :status :success}
-    {:hospital hospital :status :fail}))
+    novo-hosp
+    hospital))
 
     ;(throw (IllegalStateException. "Não cabe na fila" {:hospital hospital
                                                        ;:pessoa pessoa)))
+
+(defn atende
+  [hospital departamento]
+  (update hospital departamento pop))
+
+(defn proximo [hospital departamento]
+  (-> hospital
+      departamento
+      peek))
+
+(defn transfere [hospital de para]
+  (let [pessoa (proximo hospital de)]
+    (-> hospital
+        (atende de)
+        (chega-em para pessoa))))
