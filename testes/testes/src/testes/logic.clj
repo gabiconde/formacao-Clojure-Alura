@@ -48,10 +48,19 @@
       departamento
       peek))
 
+(defn mesmo-tamanho?
+  [hospital novo-hospital de para]
+  (= (+ (count (get hospital de)) (count (get hospital para)))
+     (+ (count (get novo-hospital de)) (count (get novo-hospital para)))))
+
 (s/defn transfere :- model/hospital
   [hospital :- model/hospital
    de :- s/Keyword
    para :- s/Keyword]
+  ;assertion continua aqui em tempo de execução.
+  {:pre [(contains? hospital de)
+         (contains? hospital para)]
+   :post [(mesmo-tamanho? hospital % de para)]}
   (let [pessoa (proximo hospital de)]
     (-> hospital
         (atende de)

@@ -49,13 +49,23 @@
       (is (= {:espera [] :raio-x [13 5]}
              (transfere hosp-original :espera :raio-x)))
 
-      (is (= {:espera2 [5]  :raio-x [13 51]}
+      (is (= {:espera2 [5] :raio-x [13 51]}
              (transfere hosp-2 :espera2 :raio-x)))))
 
   (testing "recusa pessoas se não cabe"
     (let [hosp-cheio {:espera (conj model/fila-vazia 5)
                       :raio-x (conj model/fila-vazia 2 45 67 34 5)}]
-      (is (thrown? clojure.lang.ExceptionInfo
-                   (transfere hosp-cheio :espera :raio-x))))))
+      (is (thrown? clojure.lang.ExceptionInfo (transfere hosp-cheio :espera :raio-x)))))
 
+  (testing "Não invoca sem passar hospital"
+    (is (thrown? AssertionError (transfere nil :espera :raio-x))))
+
+  (testing "condições obrigatorias"
+    (let [hosp-original {:espera (conj model/fila-vazia 5)
+                         :raio-x (conj model/fila-vazia 13)}]
+      (is (thrown? AssertionError (transfere hosp-original :outa-chave :raio-x)))
+      (is (thrown? AssertionError (transfere hosp-original :raio-x :outra-chave))))))
+
+;garantir que o schema está la na fn, serve para situacoes criticas
+;assim se alguem tirar o teste quebra.
 
