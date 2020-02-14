@@ -48,9 +48,34 @@
            (is (= {:espera (conj fila pessoa)}
                   (chega-em {:espera fila} :espera pessoa)))))
 
+;properties:
+; que propeiredades do meu sistema eu posso testar
+;a fila nao pode ser maior que 5
+;prop: manter a quantidade de pessoas dentro do hospital - transfere
+;executar trocentas vezes todas as funcoes e ver se o resultado da qtd de pessoas é o esperado.
+;;garantir que a primeira pessoa que chegou foi atendida primeiro.
+;ex: conta bancaria com o saldo correto.
 
+(def nome-aleatorio-gen
+  (gen/fmap clojure.string/join
+            (gen/vector gen/char-alphanumeric 5 10)))
+(defn transforma-vetor-em-fila [vetor]
+  (reduce conj model/fila-vazia vetor))
 
+(def fila-nao-cheia-gen
+  (gen/fmap transforma-vetor-em-fila
+    (gen/vector nome-aleatorio-gen 0 4)))
 
+(defn total-pacientes [hospital]
+  (reduce + (map count (vals hospital))))
 
-
-
+(defspec tranfere-mantem-quantidade-de-pessoas 1
+         (prop/for-all
+           [espera fila-nao-cheia-gen
+            raio-x fila-nao-cheia-gen
+            hemograma fila-nao-cheia-gen
+            vai-para (gen/elements #(:raio-x :hemograma))]
+           (let [hospital-inicio {:espera espera :raio-x raio-x :hemograma hemograma}
+                 hospital-final {transfere hospital-inicio :espera vai-para}]
+             (is (= (total-pacientes hospital-inicio)
+                    (total-pacientes hospital-final))))))
