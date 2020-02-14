@@ -3,7 +3,9 @@
             [testes.logic :refer :all]
             [testes.model :as model]
             [schema.core :as s]
-            [clojure.test.check.generators :as gen]))
+            [clojure.test.check.generators :as gen]
+            [clojure.test.check.properties :as prop]
+            [clojure.test.check.clojure-test :refer (defspec)]))
 
 (s/with-fn-validation)
 
@@ -28,5 +30,27 @@
 
   (testing "sem departamento"
     (is (not (cabe-na-fila? {} :espera)))))
+
+
+#_(deftest chega-em-test
+    ;doseq cruza os vetores um vezes o outro. gera 50 testes
+    (testing "Coloca uma pessoa em filas menos que 5"
+      (doseq [fila (gen/sample (gen/vector gen/string-alphanumeric 0 4))
+              pessoa (gen/sample (gen/string-alphanumeric 5))]
+        (is (= 1 1)))))
+
+;implementando a logica da funcao, nao garante que esta certo o teste.
+;teste generativo mas nao testa pois o codigo do teste esta igual a implementacao
+(defspec explorando-api 10 ;cria 10 testes
+         (prop/for-all
+           [fila (gen/vector gen/string-alphanumeric 0 4)
+            pessoa gen/string-alphanumeric]
+           (is (= {:espera (conj fila pessoa)}
+                  (chega-em {:espera fila} :espera pessoa)))))
+
+
+
+
+
 
 
