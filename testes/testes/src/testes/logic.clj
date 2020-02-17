@@ -42,9 +42,6 @@
   [hospital :- model/hospital
    de :- s/Keyword
    para :- s/Keyword]
-  {:pre [(contains? hospital de)
-         (contains? hospital para)]
-   :post [(mesmo-tamanho? hospital % de para)]}
   (let [pessoa (proximo hospital de)]
     (-> hospital
         (atende de)

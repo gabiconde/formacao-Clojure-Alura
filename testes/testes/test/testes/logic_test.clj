@@ -69,13 +69,20 @@
 (defn total-pacientes [hospital]
   (reduce + (map count (vals hospital))))
 
+(defn transfere-ignorando-erro [hospital de para]
+   (try
+     (transfere hospital de para)
+     (catch Error
+       (println Error)
+       hospital)))
+
 (defspec tranfere-mantem-quantidade-de-pessoas 1
          (prop/for-all
            [espera fila-nao-cheia-gen
             raio-x fila-nao-cheia-gen
             hemograma fila-nao-cheia-gen
-            vai-para (gen/elements #(:raio-x :hemograma))]
+            vai-para (gen/elements [:raio-x :hemograma])]
            (let [hospital-inicio {:espera espera :raio-x raio-x :hemograma hemograma}
-                 hospital-final {transfere hospital-inicio :espera vai-para}]
+                 hospital-final (transfere-ignorando-erro hospital-inicio :espera vai-para)]
              (is (= (total-pacientes hospital-inicio)
                     (total-pacientes hospital-final))))))
