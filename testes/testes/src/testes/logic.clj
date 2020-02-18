@@ -17,11 +17,12 @@
 
 (defn chega-em
   [hospital departamento pessoa]
-  (if-let [novo-hosp (tenta-colocar hospital departamento pessoa)]
-    novo-hosp
-    hospital))
+  (if (cabe-na-fila? hospital departamento)
+    (update hospital departamento conj pessoa)
+    (throw (java.lang.IllegalStateException. "Não cabe na fila"))))
 
-(s/defn atende :- model/hospital
+
+(s/defn atende :- (s/maybe model/hospital)
   [hospital :- model/hospital
    departamento :- s/Keyword]
   (update hospital departamento pop))
@@ -42,7 +43,11 @@
   [hospital :- model/hospital
    de :- s/Keyword
    para :- s/Keyword]
-  (let [pessoa (proximo hospital de)]
+  {:pre [(contains? hospital de)
+         (contains? hospital para)]
+   :post [(mesmo-tamanho? hospital % de para)]}
+  (if-let [pessoa (proximo hospital de)]
     (-> hospital
         (atende de)
-        (chega-em para pessoa))))
+        (chega-em para pessoa))
+    (hospital)))

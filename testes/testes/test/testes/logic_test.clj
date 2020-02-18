@@ -1,10 +1,12 @@
 (ns testes.logic-test
+  (:use [clojure.pprint])
   (:require [clojure.test :refer :all]
             [testes.logic :refer :all]
             [testes.model :as model]
             [schema.core :as s]
             [clojure.test.check.generators :as gen]
             [clojure.test.check.properties :as prop]
+            [schema-generators.generators :as g]
             [clojure.test.check.clojure-test :refer (defspec)]))
 
 (s/with-fn-validation)
@@ -72,9 +74,11 @@
 (defn transfere-ignorando-erro [hospital de para]
    (try
      (transfere hospital de para)
-     (catch Error
-       (println Error)
-       hospital)))
+     (catch IllegalStateException e
+       hospital)
+     #_(catch clojure.lang.ExceptionInfo e
+         (println "Falhou" (ex-data e))
+         hospital)))
 
 (defspec tranfere-mantem-quantidade-de-pessoas 1
          (prop/for-all
@@ -84,5 +88,36 @@
             vai-para (gen/elements [:raio-x :hemograma])]
            (let [hospital-inicio {:espera espera :raio-x raio-x :hemograma hemograma}
                  hospital-final (transfere-ignorando-erro hospital-inicio :espera vai-para)]
-             (is (= (total-pacientes hospital-inicio)
-                    (total-pacientes hospital-final))))))
+             (= (total-pacientes hospital-inicio)
+                (total-pacientes hospital-final)))))
+
+(defn adiciona-fila-de-espera [[hospital fila]]
+  (assoc hospital :espera fila))
+
+(def hospoital-gen
+  (gen/fmap
+    adiciona-fila-de-espera
+    (gen/tuple (gen/not-empty (g/generator model/hospital))
+               fila-nao-cheia-gen)))
+
+(def chega-em-gen (gen/tuple (gen/return chega-em)
+                             (gen/return :espera)
+                             nome-aleatorio-gen))
+
+(defn transfere-gen [hospital]
+  (let [departamento (keys hospital)]
+    (gen/tuple (gen/return transfere)
+               (gen/elements departamento)
+               (gen/elements departamento))))
+
+(def acao-gen
+  (gen/one-of [chega-em-gen transfere-gen]))
+
+(def acoes-gen
+  (gen/not-empty (gen/vector acao-gen 1 100)))
+
+(defspec simula-um-dia-sem-perde-pessoas 10
+         (prop/for-all [hospital hospoital-gen]
+                       (let [acoes (gen/sample acoes-gen 1)]
+                         (pprint acoes)
+                         (is (= 1 1)))))
