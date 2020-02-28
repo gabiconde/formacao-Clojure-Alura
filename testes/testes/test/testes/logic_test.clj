@@ -108,16 +108,32 @@
   (let [departamento (keys hospital)]
     (gen/tuple (gen/return transfere)
                (gen/elements departamento)
-               (gen/elements departamento))))
+               (gen/elements departamento)
+               (gen/return 0))))
 
-(def acao-gen
-  (gen/one-of [chega-em-gen transfere-gen]))
+(defn acao-gen [hospital]
+  (gen/one-of [chega-em-gen
+               (transfere-gen hospital)]))
 
-(def acoes-gen
-  (gen/not-empty (gen/vector acao-gen 1 100)))
+(defn acoes-gen [hospital]
+  (gen/not-empty (gen/vector (acao-gen hospital) 1 100)))
+
+(defn executa-uma-acao [situacao [funcao param1 param2 diferenca-se-sucesso]]
+  (let [hospital (:hospital situacao)
+        diferenca-atual (:diferenca situacao)]
+    (try
+      (let [hospital-novo (funcao hospital param1 param2)]
+           {:hospital hospital-novo :situacao (+ diferenca-se-sucesso diferenca-atual)})
+      (catch IllegalStateException e
+        situacao))))
+
 
 (defspec simula-um-dia-sem-perde-pessoas 10
-         (prop/for-all [hospital hospoital-gen]
-                       (let [acoes (gen/sample acoes-gen 1)]
-                         (pprint acoes)
-                         (is (= 1 1)))))
+         (prop/for-all
+           [hospital-inicial hospoital-gen]
+           (let [acoes (gen/generate (acoes-gen hospital-inicial))
+                 situacao-inicial {:hospital hospital-inicial :diferenca 0}
+                 total-pacientes-inicial (total-pacientes hospital-inicial)
+                 situacao-final          (reduce executa-uma-acao situacao-inicial acoes)
+                 total-pacientes-final   (total-pacientes (get :hospital situacao-final))]
+             (is (= (- total-pacientes-final (:diferenca situacao-final)) total-pacientes-inicial)))))
